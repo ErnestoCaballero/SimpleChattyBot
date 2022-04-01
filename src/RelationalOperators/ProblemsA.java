@@ -8,7 +8,8 @@ public class ProblemsA {
 //        checkAscendingOrder();
 //        isBetween();
 //        areDifferent();
-        groundhogReeses();
+//        groundhogReeses();
+        oneParameterPositive();
 
 
     }
@@ -89,5 +90,30 @@ public class ProblemsA {
         boolean b2 = reeses >= lowWeekend && reeses <= upperWeekend && weekend;
 
         System.out.println(b1 || b2);
+    }
+
+    /*
+    Exactly one parameter is positive
+    Write a program that reads three integer numbers and prints true if exactly ONE number is positive (i.e. > 0).
+
+    Otherwise, it should print false.
+     */
+
+    public static void oneParameterPositive() {
+        Scanner scanner = new Scanner(System.in);
+
+        boolean h1 = isPositive(scanner.nextInt());
+        boolean h2 = isPositive(scanner.nextInt());
+        boolean h3 = isPositive(scanner.nextInt());
+
+        boolean h1Only = h1 && !h2 && !h3;
+        boolean h2Only = h2 && !h1 && !h3;
+        boolean h3Only = h3 && !h1 && !h2;
+
+        System.out.println(h1Only || h2Only || h3Only);
+    }
+
+    public static boolean isPositive(int number) {
+        return number >= 0;
     }
 }
