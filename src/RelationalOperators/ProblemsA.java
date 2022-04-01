@@ -6,7 +6,10 @@ import java.util.Scanner;
 public class ProblemsA {
     public static void main(String[] args) {
 //        checkAscendingOrder();
-        isBetween();
+//        isBetween();
+        areDifferent();
+
+
     }
 
     /*
@@ -54,6 +57,6 @@ public class ProblemsA {
         int h2 = scanner.nextInt();
         int h3 = scanner.nextInt();
 
-        System.out.println(h1 != h2 && h2 != h3);
+        System.out.println(h1 != h2 && h2 != h3 && h1 != h3);
     }
 }
