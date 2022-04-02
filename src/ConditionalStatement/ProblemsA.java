@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class ProblemsA {
     public static void main(String[] args) {
-        armyUnits();
+//        armyUnits();
+        isLeap();
 
     }
 
@@ -56,7 +57,14 @@ public class ProblemsA {
     Output "Leap" (case-sensitive) if the given year is a leap year, and "Regular" otherwise.
 
     It is enough to write a simple conditional statement to solve this task.
-
-
      */
+    public static void isLeap() {
+        Scanner scanner = new Scanner(System.in);
+        int year = scanner.nextInt();
+        if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            System.out.println("Leap");
+        } else {
+            System.out.println("Regular");
+        }
+    }
 }
