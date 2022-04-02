@@ -25,11 +25,6 @@ public class ChocolateBar {
         int m = scanner.nextInt();
         int k = scanner.nextInt();
 
-        if (n * m >= k && (k % n == 0 || k % m == 0)) {
-            System.out.println("YES");
-        } else {
-            System.out.println("NO");
-        }
-
+        System.out.println(n * m >= k && (k % n == 0 || k % m == 0) ? "YES" : "NO");
     }
 }
