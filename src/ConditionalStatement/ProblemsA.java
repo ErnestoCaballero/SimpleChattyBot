@@ -8,7 +8,8 @@ public class ProblemsA {
 //        isLeap();
 //        isSymmetrical();
 //        sleepWell();
-        isTriangle();
+//        isTriangle();
+        givenInterval();
     }
 
     /*
@@ -135,5 +136,34 @@ public class ProblemsA {
         int c = scanner.nextInt();
 
         System.out.println(a + b > c && a + c > b && b + c > a ? "YES": "NO");
+    }
+
+    /*
+    INTERVAL
+    Given an integer as an input, print True if its value falls within the interval (−15,12]∪(14,17)∪[19,+∞).
+    Otherwise, print False (case sensitive).
+
+    Notes:
+
+    numbers denoted with a parenthesis () are exclusive;
+    numbers denoted with a square bracket [] are inclusive.
+     */
+
+    public static void givenInterval() {
+        Scanner scanner = new Scanner(System.in);
+        final int lowerOne = -15;
+        final int lowerTwo = 12;
+        final int middleOne = 14;
+        final int middleTwo = 17;
+        final int upperOne = 19;
+        int input = scanner.nextInt();
+
+        boolean firstInterval = input > lowerOne && input <= lowerTwo;
+        boolean secondInterval = input > middleOne && input < middleTwo;
+        boolean thirdInterval = input >= upperOne;
+
+        System.out.println(firstInterval
+                || secondInterval
+                || thirdInterval ? "True" : "False");
     }
 }
