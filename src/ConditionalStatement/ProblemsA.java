@@ -112,12 +112,6 @@ public class ProblemsA {
         int maxSleep = scanner.nextInt();
         int hoursSlept = scanner.nextInt();
 
-        if (hoursSlept < minSleep) {
-            System.out.println("Deficiency");
-        } else if (hoursSlept > maxSleep) {
-            System.out.println("Excess");
-        } else {
-            System.out.println("Normal");
-        }
+        System.out.println(hoursSlept < minSleep ? "Deficiency" : hoursSlept > maxSleep ? "Excess" : "Normal");
     }
 }
