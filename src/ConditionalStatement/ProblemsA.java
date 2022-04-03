@@ -7,7 +7,8 @@ public class ProblemsA {
 //        armyUnits();
 //        isLeap();
 //        isSymmetrical();
-        sleepWell();
+//        sleepWell();
+        isTriangle();
     }
 
     /*
@@ -115,5 +116,24 @@ public class ProblemsA {
         System.out.println(hoursSlept < minSleep ? "Deficiency"
                 : hoursSlept > maxSleep ? "Excess"
                 : "Normal");
+    }
+
+    /*
+    Triangle
+    Given three natural numbers A, B, and C. Determine if a triangle with these sides can exist.
+
+    If the triangle exists, output the "YES" string; otherwise, output "NO".
+
+    A triangle is valid if the sum of its two sides is greater than the third side. If three sides are A, B, and C,
+    then three conditions should be met.
+     */
+
+    public static void isTriangle() {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int c = scanner.nextInt();
+
+        System.out.println(a + b > c && a + c > b && b + c > a ? "YES": "NO");
     }
 }
