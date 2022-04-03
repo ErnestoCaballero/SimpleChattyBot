@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class ProblemsA {
     public static void main(String[] args) {
 //        armyUnits();
-        isLeap();
-
+//        isLeap();
+        isSymmetrical();
     }
 
     /*
@@ -66,5 +66,46 @@ public class ProblemsA {
         } else {
             System.out.println("Regular");
         }
+    }
+
+    /*
+    Given a four-digit number, determine whether its decimal notation is symmetric.
+    If the number is symmetric, output 1; otherwise, output any other integer.
+     */
+
+    public static void isSymmetrical() {
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        int firstDigit = input % 10;
+        int secondDigit = (input % 100 - firstDigit) / 10;
+        int thirdDigit = (input % 1_000 - secondDigit * 10 - firstDigit) / 100;
+        int fourthDigit = (input % 10_000 - thirdDigit * 100 - secondDigit * 10 - firstDigit) / 1_000;
+        System.out.println("first: " + firstDigit + "\nsecond: " + secondDigit + "\nthird: " + thirdDigit +
+                "\nfourth: " + fourthDigit);
+
+        if (fourthDigit == firstDigit && thirdDigit == thirdDigit) {
+            System.out.println(1);
+        } else {
+            System.out.println(7);
+        }
+
+    }
+
+    /*
+    Healthy sleep
+    Ann watched a health TV program and learned that oversleeping is as bad for your health as not getting enough sleep.
+    She decided to follow TV recommendations and keep track of how many hours she spends sleeping.
+
+    You are given three numbers: AA, BB and HH. According to TV, one should sleep at least AA hours per day,
+    but no more than BB hours. HH is how many hours Ann sleeps.
+
+    Task: If Ann sleeps less then AA hours, print "Deficiency". If she sleeps more than BB hours, print "Excess".
+    If her sleep fits the recommendations, print "Normal".
+
+    Input format: three numbers AA, BB, HH, where AA is always less than or equal to BB.
+     */
+    public static void sleepWell() {
+        Scanner scanner = new Scanner(System.in);
+        
     }
 }
