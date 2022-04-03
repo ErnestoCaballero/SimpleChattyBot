@@ -6,7 +6,8 @@ public class ProblemsA {
     public static void main(String[] args) {
 //        armyUnits();
 //        isLeap();
-        isSymmetrical();
+//        isSymmetrical();
+        sleepWell();
     }
 
     /*
@@ -106,6 +107,17 @@ public class ProblemsA {
      */
     public static void sleepWell() {
         Scanner scanner = new Scanner(System.in);
-        
+
+        int minSleep = scanner.nextInt();
+        int maxSleep = scanner.nextInt();
+        int hoursSlept = scanner.nextInt();
+
+        if (hoursSlept < minSleep) {
+            System.out.println("Deficiency");
+        } else if (hoursSlept > maxSleep) {
+            System.out.println("Excess");
+        } else {
+            System.out.println("Normal");
+        }
     }
 }
