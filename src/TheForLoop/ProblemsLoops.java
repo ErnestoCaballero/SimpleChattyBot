@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class ProblemsLoops {
     public static void main(String[] args) {
 //        sumFromAtoB();
-        fizzBuzz();
+//        fizzBuzz();
+        grades();
     }
 
     /*
@@ -60,5 +61,44 @@ public class ProblemsLoops {
                 System.out.println(i);
             }
         }
+    }
+
+    /*
+    Grades
+    Find the number of D, C, B and A grades for the last test on informatics, where n students from a class have
+    successfully passed the test.
+
+    The program gets number n as the first line of input and then gets the grades themselves, each on a new line.
+
+    The program must output four numbers in a single line: the number of D, C, B, and A grades (in that order),
+    separated by blank space characters.
+     */
+
+    public static void grades() {
+        Scanner scanner = new Scanner(System.in);
+
+        int numA = 0;
+        int numB = 0;
+        int numC = 0;
+        int numD = 0;
+        String grade;
+
+        int n = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i = 0; i < n; i++) {
+            grade = scanner.nextLine();
+            if ("A".equals(grade)) {
+                numA++;
+            } else if ("B".equals(grade)) {
+                numB++;
+            } else if ("C".equals(grade)) {
+                numC++;
+            } else {
+                numD++;
+            }
+        }
+
+        System.out.println(numD + " " + numC + " " + numB + " " + numA);
     }
 }
