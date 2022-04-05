@@ -9,7 +9,9 @@ public class ProblemsLoops {
 //        sumFromAtoB();
 //        fizzBuzz();
 //        grades();
-        gradesMaps();
+//        gradesMaps();
+        rangeDivisibleN();
+
     }
 
     /*
@@ -138,6 +140,31 @@ public class ProblemsLoops {
         }
 
         scanner.close();
+    }
+
+    /*
+    The count of numbers divisible by N
+    Write a program that reads three positive integers a, b, n and outputs the count of numbers divisible by n in
+    the range from a to b (a < b) inclusively.
+
+    Note: it is possible to write this program more efficiently without any loops.
+     */
+
+    public static void rangeDivisibleN() {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int n = scanner.nextInt();
+
+        int countDivisible = 0;
+
+        for (int i = a; i <= b; i++) {
+            if (i % n == 0) {
+                countDivisible++;
+            }
+        }
+
+        System.out.println(countDivisible);
     }
 
 }
