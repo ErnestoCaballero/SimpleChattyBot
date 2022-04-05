@@ -7,9 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
         greet("Aid", "2018"); // change it as you need
-//        remindName();
-//        guessAge();
-//        count();
+        remindName();
+        guessAge();
+        count();
         test();
         end();
     }
