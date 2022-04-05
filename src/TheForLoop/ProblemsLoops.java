@@ -11,8 +11,8 @@ public class ProblemsLoops {
 //        grades();
 //        gradesMaps();
 //        rangeDivisibleN();
-        productInRange();
-
+//        productInRange();
+        sumDivisibleBySix();
     }
 
     /*
@@ -186,6 +186,34 @@ public class ProblemsLoops {
         }
 
         System.out.println(accumulator);
+    }
+
+    /*
+    Numbers divisible by six
+    Find the sum of numbers divisible by 6 in the given sequence of natural numbers.
+
+    The first line of the input is the number of elements in the sequence; the next lines are the elements themselves.
+
+    It is guaranteed that there is always a number divisible by 6 in the sequence.
+     */
+
+    public static void sumDivisibleBySix() {
+        final int divisor = 6;
+        Scanner scanner = new Scanner(System.in);
+        int iterations = scanner.nextInt();
+        int sum = 0;
+        int input;
+
+        for (int i = 0; i < iterations; i++) {
+            input = scanner.nextInt();
+            scanner.nextLine();
+            if (input % divisor == 0) {
+                sum += input;
+            }
+        }
+
+        System.out.println(sum);
+
     }
 
 }
