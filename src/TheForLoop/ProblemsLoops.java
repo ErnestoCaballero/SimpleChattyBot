@@ -13,7 +13,9 @@ public class ProblemsLoops {
 //        rangeDivisibleN();
 //        productInRange();
 //        sumDivisibleBySix();
-        maxDivisibleByFour();
+//        maxDivisibleByFour();
+        sizeOfParts();
+
     }
 
     /*
@@ -241,6 +243,72 @@ public class ProblemsLoops {
           }
 
         System.out.println(max);
+    }
+
+    /*
+    Size of parts
+    A detector compares the size of parts produced by a machine with the reference standard.
+
+    If the size of the part is larger, it can be sent to be fixed, and the detector prints the number 1.
+    If the size of the part is smaller, it is removed as a reject, and the detector prints the number -1.
+    If the part is perfect, it is sent to the box with products, that are ready to ship, and the detector prints 0.
+
+    Write a program, which takes the numb;er of parts n as input, and then the sequence of detector prints.
+    The program should output numbers in a single line containing the number of parts ready to be shipped,
+    the number of parts to be fixed, and the number of rejects.
+     */
+
+    public static void sizeOfParts() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int part;
+        int countPerfect = 0;
+        int countLarger = 0;
+        int countSmaller = 0;
+
+        for (int i = 0; i < n; i++) {
+            part = scanner.nextInt();
+            if (part == 0) {
+                countPerfect++;
+            } else if (part == 1) {
+                countLarger++;
+            } else {
+                countSmaller++;
+            }
+        }
+
+        System.out.printf("%d %d %d", countPerfect, countLarger, countSmaller);
+    }
+
+    /*
+    Arithmetic average
+    Write a program that reads two numbers aa and bb from the keyboard and calculates and outputs to the console the
+    arithmetic average of all numbers from the interval [a; b][a;b], which are divisible by 33.
+
+    In the example below, the arithmetic average is calculated for the numbers on the interval [-5; 12][−5;12].
+    On this interval, there are 66 numbers divisible by 33, namely: -3, 0, 3, 6, 9, 12−3,0,3,6,9,12.
+    Their arithmetic average equals 4.54.5.
+
+    The program input contains intervals, which always contain at least one number, which is divisible by 33.
+
+    Remember that the int type cannot contain fractions. Use a double variable to store the precise result of the division.
+     */
+
+    public static void meanRangeDivisibleThree() {
+        Scanner scanner = new Scanner(System.in);
+        final int divisor = 3;
+        double sumDivisible = 0;
+        int countDivisible = 0;
+
+        for (int i = scanner.nextInt(); i <= scanner.nextInt(); i++) {
+            if (i % divisor == 0) {
+                sumDivisible += i;
+                countDivisible++;
+            }
+        }
+
+        System.out.printf("%d", sumDivisible / countDivisible);
+
     }
 
 }
