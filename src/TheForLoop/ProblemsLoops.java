@@ -14,7 +14,9 @@ public class ProblemsLoops {
 //        productInRange();
 //        sumDivisibleBySix();
 //        maxDivisibleByFour();
-        sizeOfParts();
+//        sizeOfParts();
+        meanRangeDivisibleThree();
+
 
     }
 
@@ -300,14 +302,14 @@ public class ProblemsLoops {
         double sumDivisible = 0;
         int countDivisible = 0;
 
-        for (int i = scanner.nextInt(); i <= scanner.nextInt(); i++) {
+        for (int i = scanner.nextInt(), b = scanner.nextInt(); i <= b; i++) {
             if (i % divisor == 0) {
                 sumDivisible += i;
                 countDivisible++;
             }
         }
 
-        System.out.printf("%d", sumDivisible / countDivisible);
+        System.out.println(sumDivisible / countDivisible);
 
     }
 
