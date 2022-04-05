@@ -10,7 +10,8 @@ public class ProblemsLoops {
 //        fizzBuzz();
 //        grades();
 //        gradesMaps();
-        rangeDivisibleN();
+//        rangeDivisibleN();
+        productInRange();
 
     }
 
@@ -165,6 +166,26 @@ public class ProblemsLoops {
         }
 
         System.out.println(countDivisible);
+    }
+
+    /*
+    The product of numbers from a to b
+    Write a program that prints the product of all integer numbers from a to b (a < b).
+    Include a and exclude b from the product.
+     */
+
+    public static void productInRange() {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+
+        int accumulator = 1;
+
+        for (int i = a; i < b; i++) {
+            accumulator *= i;
+        }
+
+        System.out.println(accumulator);
     }
 
 }
