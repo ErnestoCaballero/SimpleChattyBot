@@ -1,12 +1,15 @@
 package TheForLoop;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class ProblemsLoops {
     public static void main(String[] args) {
 //        sumFromAtoB();
 //        fizzBuzz();
-        grades();
+//        grades();
+        gradesMaps();
     }
 
     /*
@@ -101,4 +104,40 @@ public class ProblemsLoops {
 
         System.out.println(numD + " " + numC + " " + numB + " " + numA);
     }
+
+    public static void gradesMaps() {
+        HashMap<String, Integer> gradesMap = buildGradesMap();
+
+        fillGradesMap(gradesMap);
+
+        System.out.printf("%d %d %d %d", gradesMap.get("D"), gradesMap.get("C"), gradesMap.get("B"), gradesMap.get("A"));
+    }
+
+    private static HashMap<String, Integer> buildGradesMap() {
+        return new LinkedHashMap<>() {
+            {
+                put("A", 0);
+                put("B", 0);
+                put("C", 0);
+                put("D", 0);
+            }
+        };
+    }
+
+    private static void fillGradesMap(HashMap<String, Integer> gradesMap) {
+        Scanner scanner = new Scanner(System.in);
+
+        String grade;
+        int numOfStudents = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i = 0; i < numOfStudents; i++) {
+            grade = scanner.nextLine();
+
+            gradesMap.put(grade, gradesMap.get(grade) + 1);
+        }
+
+        scanner.close();
+    }
+
 }
