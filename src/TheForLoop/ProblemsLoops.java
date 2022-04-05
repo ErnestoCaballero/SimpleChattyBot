@@ -232,16 +232,12 @@ public class ProblemsLoops {
           Scanner scanner = new Scanner(System.in);
           final int divisor = 4;
           int len = scanner.nextInt();
-          scanner.nextLine();
           int number;
           int max = 0;
 
           for (int i = 0; i < len; i++) {
               number = scanner.nextInt();
-              scanner.nextLine();
-              if (number % divisor == 0 && number > max) {
-                  max = number;
-              }
+              max = number % divisor == 0 && number > max ? number : max;
           }
 
         System.out.println(max);
